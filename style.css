@@ -1,0 +1,173 @@
+/* ==================== GENERAL STYLES ==================== */
+
+* {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #FFFDF8;
+    color: #65004F;
+    line-height: 1.6;
+}
+
+/* ==================== COLOR PALETTE ==================== */
+
+:root {
+    --warm-white: #FFFDF8;
+    --blush-pink: #FFD4DE;
+    --warm-beige: #FCE5C5;
+    --dusty-rose: #E7CAAF;
+    --magnolia-pink: #D486B5;
+    --berry-pink: #AB217D;
+    --deep-plum: #65004F;
+
+    --border-radius: 22px;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+
+h1,
+h2,
+h3 {
+    font-family:"DM Serif Display", serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 3.8rem;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* ==================== GENERAL SECTIONS ==================== */
+
+section {
+    padding: 80px 10%;
+}
+
+section p {
+    max-width: 700px;
+}
+
+/* ==================== NAVIGATION ==================== */
+
+header {
+    background-color: var(--deep-plum);
+    padding: 18px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    font-family: "Poppins", sans-serif;
+    color: var(--warm-white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 14 px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--magnolia-pink);
+    color: var(--deep-plum);
+}
+
+/* ==================== HOME ==================== */
+
+#home {
+    min-height: 90vh;
+    background-color: var(--blush-pink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0 0 50px 50px;
+}
+
+#home h1 {
+    color: var(--deep-plum);
+    margin-bottom: 10px;
+}
+
+#home h2 {
+    font-family: "Poppins", sans-serif;
+    color: var(--berry-pink);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#home p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* Home Button */
+
+#home a {
+    display: inline-block;
+    background-color: var(--berry-pink);
+    color: var(--warm-white);
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#home a:hover {
+    background-color: var(--deep-plum);
+    transform: translateY(-4px);
+}
+
+/* ==================== ABOUT ==================== */
+
+
+/* ==================== SKILLS ==================== */
+
+
+/* ==================== PROJECTS ==================== */
+
+
+/* ==================== RESUME ==================== */
+
+
+/* ==================== CONTACT ==================== */
+
+
+/* ==================== FOOTER ==================== */
+
+
+/* ==================== RESPONSIVE DESIGN ==================== */
