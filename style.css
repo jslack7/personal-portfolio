@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Lato", sans-serif;
     background-color: #FFFDF8;
     color: #65004F;
     line-height: 1.6;
@@ -88,7 +88,7 @@ nav {
 }
 
 nav a {
-    font-family: "Poppins", sans-serif;
+    font-family: "Lato", sans-serif;
     color: var(--warm-white);
     text-decoration: none;
     font-weight: 600;
@@ -121,7 +121,7 @@ nav a:hover {
 }
 
 #home h2 {
-    font-family: "Poppins", sans-serif;
+    font-family: "Lato", sans-serif;
     color: var(--berry-pink);
     font-size: 1.6rem;
     font-weight: 600;
@@ -142,7 +142,7 @@ nav a:hover {
     padding: 12px 25px;
     border-radius: 30px;
     text-decoration: none;
-    font-family: "Poppins", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 600;
     transition: 0.3s;
 }
@@ -236,7 +236,7 @@ nav a:hover {
 
 .skill-card li {
     margin-bottom: 10px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 /* ==================== PROJECTS ==================== */
@@ -308,7 +308,7 @@ nav a:hover {
     padding: 10px 18px;
     border-radius: 25px;
     text-decoration: none;
-    font-family: "Poppins", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 600;
     transition: 0.3s;
 }
@@ -342,7 +342,7 @@ nav a:hover {
     padding: 12px 24px;
     border-radius: 30px;
     text-decoration: none;
-    font-family: "Poppins", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 600;
     transition: 0.3s;
 }
@@ -354,8 +354,54 @@ nav a:hover {
 
 /* ==================== CONTACT ==================== */
 
+#contact {
+    background-color: var(--warm-white);
+    text-align: center;
+}
+
+#contact p {
+    margin: 0 auto 30px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    background-color: var(--magnolia-pink);
+    color: var(--deep-plum);
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    background-color: var(--berry-pink);
+    color: var(--warm-white);
+    transform: translateY(-3px);
+}
 
 /* ==================== FOOTER ==================== */
+
+footer {
+    background-color: var(--deep-plum);
+    color: var(--warm-white);
+    text-align: center;
+    padding: 25px;
+    border-radius: 35px 35px 0 0;
+}
+
+footer p {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
 
 
 /* ==================== RESPONSIVE DESIGN ==================== */
