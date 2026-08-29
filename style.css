@@ -320,6 +320,37 @@ nav a:hover {
 
 /* ==================== RESUME ==================== */
 
+#resume {
+    background-color: var(--warm-beige);
+    text-align: center;
+}
+
+#resume p {
+    margin: 0 auto 30px;
+}
+
+.resume-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.resume-links a {
+    background-color: var(--berry-pink);
+    color: var(--warm-white);
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.resume-links a:hover {
+    background-color: var(--deep-plum);
+    transform: translateY(-3px);
+}
 
 /* ==================== CONTACT ==================== */
 
