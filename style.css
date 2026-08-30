@@ -585,32 +585,118 @@ nav {
     line-height: 1;
 }
 
-#contact p {
-    margin: 0 auto 30px;
+.contact-intro {
+    margin: 0 auto 40px;
 }
 
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+/* Contact Form */
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 35px;
+    background-color: var(--blush-pink);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 20px rgba(101, 0, 79, 0.12);
+    text-align: left;
 }
 
-.contact-links a {
-    background-color: var(--magnolia-pink);
+/* Each label/input group */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
     color: var(--deep-plum);
-    padding: 12px 24px;
-    border-radius: 30px;
-    text-decoration: none;
     font-family: "Lato", sans-serif;
-    font-weight: 600;
+    font-weight: 700;
+}
+
+/* Inputs + Textarea */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 2px solid var(--magnolia-pink);
+    border-radius: 12px;
+    background-color: var(--warm-white);
+    color: var(--deep-plum);
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    outline: none;
     transition: 0.3s;
 }
 
-.contact-links a:hover {
+/* Focus Effect */
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--berry-pink);
+    box-shadow: 0 0 0 3px rgba(171, 33, 125, 0.12);
+}
+
+/* Don't allow textarea to shrink */
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Placeholder Text */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #8C7085;
+}
+
+/* Send Button */
+
+.contact-form button {
+    display: block;
+    margin: 10px auto 0;
     background-color: var(--berry-pink);
     color: var(--warm-white);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: var(--deep-plum);
     transform: translateY(-3px);
+}
+
+/* GitHub + LinkedIn */
+
+.contact-socials {
+    margin-top: 35px;
+}
+
+.contact-socials p {
+    margin: 0 auto 15px;
+    font-weight: 600;
+}
+
+.contact-socials a {
+    display: inline-block;
+    margin: 5px;
+    color: var(--berry-pink);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contact-socials a:hover {
+    color: var(--deep-plum);
+    text-decoration: underline;
 }
 
 /* ==================== FOOTER ==================== */
@@ -932,6 +1018,21 @@ footer p {
     }
 
     /* Resume + Contact */
+
+    .contact-form {
+        padding: 25px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1rem;
+    }
+
+    .contact-form button {
+        width: 100%;
+        max-width: 240px;
+    }
+    
     .resume-links,
     .contact-links {
         flex-direction: column;
@@ -939,7 +1040,7 @@ footer p {
     }
 
     .resume-links a,
-    .contact-links a {
+    .contac-links {
         width: 100%;
         max-width: 240px;
         text-align: center;
