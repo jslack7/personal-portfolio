@@ -81,8 +81,25 @@ header {
 
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--warm-white);
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--magnolia-pink);
 }
 
 /* Navigation Links */
@@ -609,6 +626,20 @@ footer {
 footer p {
     font-size: 0.9rem;
     font-weight: 500;
+}
+
+.footer-logo {
+    display: inline-block;
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--warm-white);
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer-logo span {
+    color: var(--magnolia-pink);
 }
 
 
