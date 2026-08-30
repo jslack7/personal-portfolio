@@ -83,24 +83,42 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
 }
 
-nav a {
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
     font-family: "Lato", sans-serif;
     color: var(--warm-white);
     text-decoration: none;
     font-weight: 600;
-    padding: 8px 14 px;
+    padding: 8px 14px;
     border-radius: 20px;
     transition: 0.3s;
 }
 
-nav a:hover {
+.nav-links a:hover {
     background-color: var(--magnolia-pink);
     color: var(--deep-plum);
     padding: 0 15px;
+}
+
+/* Mobile Menu Button */
+
+.menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--warm-white);
+        font-size: 2rem;
+        cursor: pointer;
 }
 
 /* ==================== HOME ==================== */
@@ -596,3 +614,319 @@ footer p {
 
 
 /* ==================== RESPONSIVE DESIGN ==================== */
+
+/* ==================== TABLET ==================== */
+
+@media (max-width: 768px) {
+    
+    /* General */
+    section {
+        padding: 60px 6%;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Navigation */
+    header {
+        padding: 14px 5%
+    }
+    nav{
+        gap: 20px;
+    }
+    .logo {
+        font-size: 2rem;
+    }
+    .nav-links {
+        gap: 14px;
+    }
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+    }
+
+    /* Home */
+    #home {
+        min-height: 80vh;
+        padding: 70px 8%;
+    }
+
+    #home h1 {
+        font-size: 3.1;
+    }
+
+    #home h2 {
+        font-size: 1.4rem;
+    }
+
+    #home p {
+        max-width: 550px;
+        font-size: 1rem;
+    }
+
+    /* About */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .about-container img {
+        width: 240px;
+        height: 240px;
+    }
+
+    .about-text {
+        max-width: 650px;
+        padding: 30px;
+    }
+
+    /* Skills */
+    .skills-container {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+    }
+
+    .skill-category-icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Projects */
+    .projects-container {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+    }
+
+    .project-card {
+        min-height: auto;
+    }
+
+    .project-card img {
+        height: 280px;
+    }
+
+    .project-links {
+        justify-content: center;
+    }
+
+    /* Resume + Contact */
+    .resume-links,
+    .contact-links {
+        justify-content: center;
+    }
+
+    /* Footer */
+    .footer-logo {
+        font-size: 2.2rem;
+    }
+}
+
+/* ==================== MOBILE ==================== */
+
+@media (max-width: 576) {
+
+    /* General */
+    section {
+        padding: 50px 5%;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.35rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+
+/* ==================== MOBILE NAVIGATION ==================== */
+
+    header {
+        padding: 12px 5%;
+    }
+
+    nav {
+        position: relative;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        width: 220px;
+        background-color: var(--deep-plum);
+        padding: 18px;
+        border-radius: 0 0 18px 18px;
+        box-shadow: 0 8px 18px rgba(101, 0, 79, 0.2);
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        font-size: 0.95;
+        padding: 10px 15px;
+    }
+
+    /* Home */
+    #home {
+        min-height: 75vh;
+        padding: 60px 6%;
+        border-radius: 0 0 30px 30px;
+    }
+
+    #home h1 {
+        font-size: 2.4rem;
+    }
+
+    #home h2 {
+        font-size: 1.2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    #home a {
+        padding: 11px 20px;
+    }
+
+    /* About */
+
+    .about-container {
+        gap: 25px;
+    }
+
+    .about-container img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-text {
+        padding: 22px;
+    }
+
+    /* Decorative heading lines */
+    .heading-decoration span:not(.flower) {
+        width: 45px;
+    }
+
+    .heading-decoration .flower {
+        font-size: 1.4rem;
+    }
+
+    /* Skills */
+    .skills-intro {
+        margin-bottom: 35px;
+    }
+
+    .skill-card {
+        padding: 24px 18px;
+    }
+
+    .skill-category-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .skill-card li {
+        font-size: 0.85rem;
+        padding: 11px 13px;
+        border-left-width: 6px;
+    }
+
+    /* Projects */
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 18px;
+    }
+
+    .project-card img {
+        height: 220px;
+    }
+
+    .project-card h3 {
+        text-align: center;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: auto;
+        padding-top: 20px;
+    }
+
+    .project-links a {
+        width: 100%;
+        max-width: 220px;
+        text-align: center;
+    }
+
+    /* Resume + Contact */
+    .resume-links,
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resume-links a,
+    .contact-links a {
+        width: 100%;
+        max-width: 240px;
+        text-align: center;
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px 15px;
+        border-radius: 25px 25px 0 0;
+    }
+
+    .footer-logo {
+        font-size: 2rem;
+    }
+
+    footer p{
+        font-size: 0.8rem;
+    }
+}
+
+
