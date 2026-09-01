@@ -34,7 +34,7 @@ contactForm.addEventListener("submit", async function (event) {
     try {
 
         // Send the information to Formspree
-        const response = await fetch(contactForm.ariaDescription, {
+        const response = await fetch(contactForm.action, {
             method: contactForm.method,
             body: formData,
             headers: {
