@@ -804,8 +804,9 @@ nav {
     text-align: center;
 }
 
-.contact-socials p {
-    margin-bottom: 18px;
+#contact .contact-socials p {
+    width: 100%;
+    margin: 0 auto 18px;
     text-align: center;
     color: var(--deep-plum);
     font-weight: 600;
