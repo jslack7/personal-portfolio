@@ -806,6 +806,7 @@ nav {
 
 .contact-socials p {
     margin-bottom: 18px;
+    text-align: center;
     color: var(--deep-plum);
     font-weight: 600;
 }
