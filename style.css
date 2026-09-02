@@ -546,6 +546,21 @@ nav {
     font-weight: 700;
 }
 
+.project-learning {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: var(--blush-pink);
+    border-left: 4px solid var(--berry-pink);
+    border-radius: 10px;
+    color: var(--deep-plum);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.project-learning strong {
+    color: var(--berry-pink);
+}
+
 /* Project Buttons */
 
 .project-links {
