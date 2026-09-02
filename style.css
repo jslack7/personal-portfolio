@@ -329,6 +329,7 @@ nav {
     border: 2px solid var(--magnolia-pink);
     box-shadow: 0 6px 15px rgba(101, 0, 79, 0.12);
     transition: 0.3s;
+    height: 100%;
 }
 
 .skill-card:hover {
