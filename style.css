@@ -421,7 +421,7 @@ nav {
 
 .heading-decoration .flower {
     color: var(--berry-pink);
-    font: 1.8rem;
+    font-size: 1.8rem;
     line-height: 1;
 }
 
@@ -429,11 +429,11 @@ nav {
 /* Project Grid */
 
 .projects-container {
-    max-width: 1150px;
+    max-width: 950px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 30px;
 }
 
 /* Project Card */
@@ -441,11 +441,11 @@ nav {
 
 .project-card {
     background-color: var(--warm-white);
-    border-radius: 30px;
+    border-radius: 25px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-height: 650px;
+    min-height: auto;
     border: 2px solid rgba(212, 134, 181, 0.35);
     box-shadow: 0 12px 30px rgba(101, 0, 79, 0.12);
     transition: 
@@ -462,7 +462,7 @@ nav {
 
 .project-visual {
     position: relative;
-    height: 300px;
+    height: 230px;
     overflow: hidden;
     background-color: var(--magnolia-pink);
 }
@@ -503,7 +503,7 @@ nav {
 /* Card Content */
 
 .project-content {
-    padding: 35px;
+    padding: 28px;
     display: flex;
     flex-direction: column;
     flex: 1;
