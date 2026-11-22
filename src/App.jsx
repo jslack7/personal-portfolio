@@ -2,6 +2,7 @@
 import Navbar from "./components/Navbar";
 import Home from "./sections/Home";
 import About from "./sections/About";
+import Skills from "./sections/Skills";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
             <main>
                 <Home />
                 <About />
+                <Skills />
             </main>
 
             <Footer />

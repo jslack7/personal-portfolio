@@ -3,6 +3,12 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import BrandLogo from "./BrandLogo";
 
+const navigationLinks = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Skills", href: "#skills" },
+];
+
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -21,7 +27,7 @@ export default function Navbar() {
                     aria-label={menuOpen ? "Close navigation" : "Open navigation"}
                     aria-expanded={menuOpen}
                     aria-controls="primary-navigation"
-                    onClick={() => setMenuOpen(!menuOpen)}
+                    onClick={() => setMenuOpen((open) => !open)}
                 >
                     {menuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -30,16 +36,13 @@ export default function Navbar() {
                     id="primary-navigation"
                     className={`nav-links ${menuOpen ? "nav-links--open" : ""}`}
                 >
-                    <li>
-                        <a href="#home" onClick={closeMenu}>
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#about" onClick={closeMenu}>
-                            About
-                        </a>
-                    </li>
+                    {navigationLinks.map((link) => (
+                        <li key={link.href}>
+                            <a href={link.href} onClick={closeMenu}>
+                                {link.label}
+                            </a>
+                        </li>
+                    ))}
                 </ul>
             </nav>
         </header>
