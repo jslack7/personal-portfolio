@@ -115,3 +115,11 @@
     transform: none;
   }
 }
+
+
+/* Match decorative flowers to the About Me flower */
+
+.brand-logo__flower,
+.floating-flower {
+  font-family: var(--font-body);
+}
