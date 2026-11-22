@@ -84,22 +84,42 @@ const projects = [
 function ProjectCard({ project }) {
     const [expanded, setExpanded] = useState(false);
     const ProjectIcon = project.icon;
+
+    const headingId = `${project.id}-title`;
     const detailsId = `${project.id}-details`;
 
     return (
-        <article className="project-card">
+        <article
+            className="project-card"
+            aria-labelledby={headingId}
+        >
             <div className="project-card-top">
                 <div className="project-icon">
-                    <ProjectIcon size={26} strokeWidth={1.6} aria-hidden="true" />
+                    <ProjectIcon
+                        size={26}
+                        strokeWidth={1.6}
+                        aria-hidden="true"
+                    />
                 </div>
-                <span className="project-status">{project.status}</span>
+                <span className="project-status">
+                    {project.status}
+                </span>
             </div>
 
-            <p className="project-category">{project.category}</p>
-            <h3>{project.title}</h3>
-            <p className="project-description">{project.description}</p>
+            <p className="project-category">
+                {project.category}
+            </p>
 
-            <ul className="project-technologies" aria-label="Technologies used">
+            <h3 id={headingId}>{project.title}</h3>
+
+            <p className="project-description">
+                {project.description}
+            </p>
+
+            <ul
+                className="project-technologies"
+                aria-label={`Technologies used for ${project.title}`}
+            >
                 {project.technologies.map((technology) => (
                     <li key={technology}>{technology}</li>
                 ))}
@@ -109,11 +129,17 @@ function ProjectCard({ project }) {
                 <button
                     className="project-details-toggle"
                     type="button"
+                    aria-label={
+                        expanded
+                            ? `Show less about ${project.title}`
+                            : `View details about ${project.title}`
+                    }
                     aria-expanded={expanded}
                     aria-controls={detailsId}
                     onClick={() => setExpanded((current) => !current)}
                 >
                     {expanded ? "Show Less" : "View Details"}
+
                     <ChevronDown
                         size={17}
                         className={expanded ? "chevron-expanded" : ""}
@@ -127,10 +153,13 @@ function ProjectCard({ project }) {
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label={`View ${project.title} on GitHub`}
+                            aria-label={`View ${project.title} on GitHub (opens in a new tab)`}
                             title="GitHub repository"
                         >
-                            <Code2 size={19} aria-hidden="true" />
+                            <Code2
+                                size={19}
+                                aria-hidden="true"
+                            />
                         </a>
                     )}
 
@@ -139,25 +168,36 @@ function ProjectCard({ project }) {
                             href={project.demo}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label={`View ${project.title} live demo`}
+                            aria-label={`View ${project.title} live demo (opens in a new tab)`}
                             title="Live demo"
                         >
-                            <ArrowUpRight size={19} aria-hidden="true" />
+                            <ArrowUpRight
+                                size={19}
+                                aria-hidden="true"
+                            />
                         </a>
                     )}
                 </div>
             </div>
 
-            {expanded && (
-                <div className="project-expanded-details" id={detailsId}>
-                    <h4>Project Highlights</h4>
-                    <ul>
-                        {project.highlights.map((highlight) => (
-                            <li key={highlight}>{highlight}</li>
-                        ))}
-                    </ul>
-                </div>
-            )}
+            <div
+                id={detailsId}
+                className="project-expanded-details"
+                role="region"
+                aria-labelledby={headingId}
+                hidden={!expanded}
+            >
+                {expanded && (
+                    <>
+                        <h4>Project Highlights</h4>
+                        <ul>
+                            {project.highlights.map((highlight) => (
+                                <li key={highlight}>{highlight}</li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+            </div>
         </article>
     );
 }
@@ -171,10 +211,14 @@ export default function Projects() {
         >
             <div className="container">
                 <div className="projects-heading">
-                    <p className="section-eyebrow">Selected Work</p>
+                    <p className="section-eyebrow">
+                        Selected Work
+                    </p>
+
                     <h2 id="projects-title">
                         Featured <em>Projects</em>
                     </h2>
+
                     <p>
                         A collection of projects that reflect my growth as a developer,
                         from foundational front-end work to full-stack applications.
@@ -183,7 +227,10 @@ export default function Projects() {
 
                 <div className="projects-grid">
                     {projects.map((project) => (
-                        <ProjectCard key={project.id} project={project} />
+                        <ProjectCard
+                            key={project.id}
+                            project={project}
+                        />
                     ))}
                 </div>
 

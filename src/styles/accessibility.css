@@ -1,0 +1,117 @@
+
+/* Phase 5B: Accessibility & Usability */
+
+:where(a, button, input, textarea):focus-visible {
+  outline: 3px solid var(--forest-ink);
+  outline-offset: 3px;
+}
+
+.site-header :where(a, button):focus-visible,
+.site-footer :where(a, button):focus-visible {
+  outline-color: var(--antique-ivory);
+}
+
+.contact-form-field input:focus-visible,
+.contact-form-field textarea:focus-visible {
+  outline: 3px solid var(--forest-ink);
+  outline-offset: 3px;
+}
+
+.project-links a {
+  width: 44px;
+  height: 44px;
+}
+
+.project-details-toggle {
+  min-height: 44px;
+  padding: 10px 4px;
+}
+
+.project-expanded-details[hidden] {
+  display: none;
+}
+
+/* Contact links */
+
+.contact-social-links a span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Footer navigation */
+
+.footer-navigation {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.footer-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.4rem 0.2rem;
+  color: var(--antique-ivory);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav-links a:hover {
+  color: var(--dusty-rose);
+}
+
+@media (max-width: 680px) {
+  .footer-nav-links {
+    gap: 0.25rem 1.25rem;
+  }
+
+  .footer-nav-links a {
+    font-size: 0.85rem;
+  }
+}
+
+/* Reduced-motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .floating-flower {
+    animation: none;
+  }
+
+  .button,
+  .nav-links a,
+  .about-link,
+  .skill-card,
+  .project-card,
+  .project-details-toggle svg,
+  .project-links a,
+  .resume-download,
+  .contact-social-links a,
+  .contact-submit,
+  .footer-nav-links a {
+    transition: none;
+  }
+
+  .button:hover,
+  .skill-card:hover,
+  .project-card:hover,
+  .resume-download:hover {
+    transform: none;
+  }
+}

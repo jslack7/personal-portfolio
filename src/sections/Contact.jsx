@@ -6,20 +6,31 @@ import {
     CheckCircle2,
     Code2,
     Mail,
-    Send,
+    Send
 } from "lucide-react";
 
-const socialLinks = [
+const contactLinks = [
+    {
+        label: "Email",
+        display: "jslack7@gmail.com",
+        href: "mailto:jslack7@gmail.com",
+        icon: Mail,
+        external: false
+    },
     {
         label: "GitHub",
+        display: "GitHub",
         href: "https://github.com/jslack7",
         icon: Code2,
+        external: true
     },
     {
         label: "LinkedIn",
+        display: "LinkedIn",
         href: "https://www.linkedin.com/in/jessika-slack",
         icon: BriefcaseBusiness,
-    },
+        external: true
+    }
 ];
 
 export default function Contact() {
@@ -28,6 +39,10 @@ export default function Contact() {
 
     async function handleSubmit(event) {
         event.preventDefault();
+
+        if (formStatus === "sending") {
+            return;
+        }
 
         const form = event.currentTarget;
         const formData = new FormData(form);
@@ -42,8 +57,8 @@ export default function Contact() {
                     method: "POST",
                     body: formData,
                     headers: {
-                        Accept: "application/json",
-                    },
+                        Accept: "application/json"
+                    }
                 }
             );
 
@@ -84,7 +99,11 @@ export default function Contact() {
                 <div className="contact-grid">
                     <div className="contact-information">
                         <div className="contact-information-icon">
-                            <Mail size={29} strokeWidth={1.5} aria-hidden="true" />
+                            <Mail
+                                size={29}
+                                strokeWidth={1.5}
+                                aria-hidden="true"
+                            />
                         </div>
 
                         <h3>Let's Start a Conversation</h3>
@@ -95,28 +114,53 @@ export default function Contact() {
                         </p>
 
                         <div className="contact-social-links">
-                            {socialLinks.map((link) => {
-                                const SocialIcon = link.icon;
+                            {contactLinks.map((link) => {
+                                const ContactIcon = link.icon;
 
                                 return (
                                     <a
                                         key={link.label}
                                         href={link.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                        {...(link.external
+                                            ? {
+                                                target: "_blank",
+                                                rel: "noopener noreferrer"
+                                            }
+                                            : {})}
+                                        aria-label={
+                                            link.external
+                                                ? `${link.label} (opens in a new tab)`
+                                                : `Send an email to ${link.display}`
+                                        }
                                     >
-                                        <SocialIcon size={20} aria-hidden="true" />
-                                        <span>{link.label}</span>
-                                        <ArrowUpRight size={16} aria-hidden="true" />
+                                        <ContactIcon
+                                            size={20}
+                                            aria-hidden="true"
+                                        />
+
+                                        <span>{link.display}</span>
+
+                                        <ArrowUpRight
+                                            size={16}
+                                            aria-hidden="true"
+                                        />
                                     </a>
                                 );
                             })}
                         </div>
                     </div>
 
-                    <form className="contact-form" onSubmit={handleSubmit}>
+                    <form
+                        className="contact-form"
+                        onSubmit={handleSubmit}
+                        aria-label="Contact form"
+                        aria-busy={formStatus === "sending"}
+                    >
                         <div className="contact-form-field">
-                            <label htmlFor="contact-name">Your Name</label>
+                            <label htmlFor="contact-name">
+                                Your Name
+                            </label>
+
                             <input
                                 id="contact-name"
                                 name="name"
@@ -128,7 +172,10 @@ export default function Contact() {
                         </div>
 
                         <div className="contact-form-field">
-                            <label htmlFor="contact-email">Email Address</label>
+                            <label htmlFor="contact-email">
+                                Email Address
+                            </label>
+
                             <input
                                 id="contact-email"
                                 name="email"
@@ -140,7 +187,10 @@ export default function Contact() {
                         </div>
 
                         <div className="contact-form-field">
-                            <label htmlFor="contact-message">Your Message</label>
+                            <label htmlFor="contact-message">
+                                Your Message
+                            </label>
+
                             <textarea
                                 id="contact-message"
                                 name="message"
@@ -155,20 +205,38 @@ export default function Contact() {
                             type="submit"
                             disabled={formStatus === "sending"}
                         >
-                            <Send size={18} aria-hidden="true" />
-                            {formStatus === "sending" ? "Sending..." : "Send Message"}
+                            <Send
+                                size={18}
+                                aria-hidden="true"
+                            />
+
+                            {formStatus === "sending"
+                                ? "Sending..."
+                                : "Send Message"}
                         </button>
 
-                        <div className="contact-form-feedback" aria-live="polite">
+                        <div
+                            className="contact-form-feedback"
+                            role="status"
+                            aria-live="polite"
+                            aria-atomic="true"
+                        >
+                            {formStatus === "sending" && (
+                                <p>Sending your message...</p>
+                            )}
+
                             {formStatus === "success" && (
                                 <p className="contact-success">
-                                    <CheckCircle2 size={19} aria-hidden="true" />
+                                    <CheckCircle2
+                                        size={19}
+                                        aria-hidden="true"
+                                    />
                                     Your message was sent successfully!
                                 </p>
                             )}
 
                             {formStatus === "error" && (
-                                <p className="contact-error" role="alert">
+                                <p className="contact-error">
                                     {errorMessage}
                                 </p>
                             )}

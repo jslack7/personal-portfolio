@@ -99,7 +99,7 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: clamp(1rem, 2vw, 2.5rem);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -392,7 +392,7 @@ a {
 
 /* Responsive layout */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .navbar {
     min-height: 72px;
   }
@@ -425,7 +425,7 @@ a {
   }
 
   .hero {
-    min-height: 650px;
+    min-height: min(650px, calc(100svh - 72px));
     padding: 5rem 0;
   }
 
@@ -457,7 +457,7 @@ a {
   }
 
   .hero {
-    min-height: 620px;
+    min-height: min(620px, calc(100svh - 72px));
     padding: 4rem 0;
   }
 
@@ -501,5 +501,111 @@ a {
 
   .button:hover {
     transform: none;
+  }
+}
+
+
+/* Botanical flowers distributed throughout the mobile hero */
+
+@media (max-width: 900px) {
+  .floating-flower {
+    display: block;
+    opacity: 0.24;
+  }
+
+  /* Upper area */
+
+  .flower--one {
+    top: 5%;
+    left: 9%;
+    right: auto;
+    bottom: auto;
+    font-size: 2.4rem;
+  }
+
+  .flower--two {
+    top: 12%;
+    right: 12%;
+    left: auto;
+    bottom: auto;
+    font-size: 1.8rem;
+  }
+
+  .flower--seven {
+    top: 3%;
+    left: 53%;
+    right: auto;
+    bottom: auto;
+    font-size: 1.1rem;
+  }
+
+  /* Middle area */
+
+  .flower--three {
+    top: 40%;
+    left: 3%;
+    right: auto;
+    bottom: auto;
+    font-size: 1.5rem;
+  }
+
+  .flower--four {
+    top: 49%;
+    right: 3%;
+    left: auto;
+    bottom: auto;
+    font-size: 2.5rem;
+  }
+
+  /* Lower area */
+
+  .flower--five {
+    top: auto;
+    bottom: 16%;
+    left: 12%;
+    right: auto;
+    font-size: 2rem;
+  }
+
+  .flower--six {
+    top: auto;
+    bottom: 6%;
+    right: 15%;
+    left: auto;
+    font-size: 2.4rem;
+  }
+
+  .flower--eight {
+    top: auto;
+    bottom: 27%;
+    right: 8%;
+    left: auto;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-flower {
+    opacity: 0.20;
+  }
+
+  .flower--one,
+  .flower--four,
+  .flower--six {
+    font-size: 1.9rem;
+  }
+
+  .flower--two,
+  .flower--five {
+    font-size: 1.5rem;
+  }
+
+  .flower--three,
+  .flower--eight {
+    font-size: 1.1rem;
+  }
+
+  .flower--seven {
+    font-size: 0.9rem;
   }
 }

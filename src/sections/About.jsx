@@ -4,7 +4,11 @@ import FlowerSymbol from "../components/FlowerSymbol";
 
 export default function About() {
     return (
-        <section className="about-section" id="about" aria-labelledby="about-title">
+        <section
+            className="about-section"
+            id="about"
+            aria-labelledby="about-title"
+        >
             <div className="container">
                 <div className="about-grid">
                     <div className="about-photo-column">
@@ -13,6 +17,8 @@ export default function About() {
                                 src="/images/profile.png"
                                 alt="Jessika, full-stack developer"
                                 className="about-photo"
+                                loading="lazy"
+                                decoding="async"
                             />
                         </div>
 
