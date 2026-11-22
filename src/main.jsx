@@ -5,6 +5,7 @@ import App from "./App";
 import "./styles/theme.css";
 import "./styles/global.css";
 import "./styles/phase2.css";
+import "./styles/phase3.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
